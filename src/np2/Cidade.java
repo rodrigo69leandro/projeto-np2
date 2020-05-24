@@ -1,19 +1,31 @@
 package np2;
 
-import java.util.List;
-
 public class Cidade extends Entidade {
 	
-	public String UF;
-	public List<Hotel> hoteis;
-	public List<Restaurante> restaurantes;
+	public EnumUF UF;
 	
 	
-	public Cidade(String nome, String UF, List<Hotel> hotel, List<Restaurante> restaurante) {
-		this.nome 		  = nome;
-		this.hoteis 	  = hotel;
-		this.restaurantes = restaurante;
+	public Cidade(int id, String nome, EnumUF UF) {
 		
+		this.id 		  = id;
+		this.nome 		  = nome;
+		this.UF 		  = UF;
+	}
+	
+	public String getNome() {
+		return this.nome;
+	}
+
+
+	public Object getHoteis() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	public Object getRestaurantes() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 
