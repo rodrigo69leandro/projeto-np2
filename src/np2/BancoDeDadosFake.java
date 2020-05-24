@@ -26,16 +26,17 @@ public class BancoDeDadosFake extends Entidade{
     	
     	return cidade;
     }
+ 
     
-    
-	public void addHotel(String nome, float valorDiaria, Cidade cidade) {
-		
-		
+	public Hotel addHotel(Hotel hotel) {
+    	
+		hoteis.add(id, hotel);
+    	return hotel;
 	}
     
-	public void addRestaurante(String nome, float valorRefeicao, Cidade cidade) {
-		
-		
+	public Restaurante addRestaurante(Restaurante restaurante) {
+		restaurantes.add(restaurante);
+    	return restaurante;
 	}
 
 	public Cidade getCidadePeloId(int idEscolhido) {
@@ -43,13 +44,16 @@ public class BancoDeDadosFake extends Entidade{
 		System.out.println(this.cidades);
 
 		return cidades.get(id);
+
 		
-	
 	}
 
 	public Hotel getHotelPeloId(int idEscolhido) {
 		
-		return this.hoteis.get(id);
+		System.out.println(this.hoteis);
+
+		return hoteis.get(id);
+
 	}
     
 	public Restaurante GetRestaurantePeloId(int idEscolhido) {

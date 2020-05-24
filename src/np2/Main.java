@@ -113,7 +113,7 @@ class Main {
         System.out.println("  * Cidade       : "+ cidadeEscolhida.nome +"/"+cidadeEscolhida.UF);
         System.out.println("  * Hotel        : " + hotelEscolhido.nome);
         System.out.printf ("  * Data início  : %02d/%02d/%d\n", dia, mes, ano);
-        System.out.printf ("  * Data início  : %02d/%02d/%d\n", dataIniPacote.get(Calendar.DAY_OF_MONTH), dataIniPacote.get(Calendar.MONTH)+1, dataIniPacote.get(Calendar.YEAR));
+        System.out.printf ("  * Data Fim	 : %02d/%02d/%d\n", dataIniPacote.get(Calendar.DAY_OF_MONTH), dataIniPacote.get(Calendar.MONTH)+1, dataIniPacote.get(Calendar.YEAR));
         System.out.println("  * Restaurante  : ");
         System.out.println("  * Ref. diárias : ");
         System.out.println("-------------------------------------");
@@ -130,23 +130,23 @@ class Main {
         System.out.println("  * Cidade       : "+ cidadeEscolhida.nome +"/"+cidadeEscolhida.UF);
         System.out.println("  * Hotel        : " + hotelEscolhido.nome);
         System.out.printf ("  * Data início  : %02d/%02d/%d\n", dia, mes, ano);
-        System.out.printf ("  * Data início  : %02d/%02d/%d\n", dataIniPacote.get(Calendar.DAY_OF_MONTH), dataIniPacote.get(Calendar.MONTH)+1, dataIniPacote.get(Calendar.YEAR));
+        System.out.printf ("  * Data Fim	 : %02d/%02d/%d\n", dataIniPacote.get(Calendar.DAY_OF_MONTH), dataIniPacote.get(Calendar.MONTH)+1, dataIniPacote.get(Calendar.YEAR));
         System.out.println("  * Restaurante  : "+ restauranteEscolhido.nome);
         System.out.println("  * Ref. diárias : ");
         System.out.println("-------------------------------------");
         System.out.printf("  Quantas refeições diárias inclusas? ");
-        int qtdRefeicoes = in.nextInt();
+        int qtdRefeicoesDiarias = in.nextInt();
 
-        PacoteTuristico pacote = PacoteTuristico.Novo(cidadeEscolhida, hotelEscolhido, dataIniPacote, qtdDias, restauranteEscolhido, qtdRefeicoes);
+        PacoteTuristico pacote = PacoteTuristico.Novo(cidadeEscolhida, hotelEscolhido, dataIniPacote, qtdDias, restauranteEscolhido, qtdRefeicoesDiarias);
 
         Util.cls();
-        Calendar ini = pacote.dataInicio;
-        Calendar fim = pacote.dataFim;
+//        Calendar ini = pacote.dataInicio;
+//        Calendar fim = pacote.dataFim;
         System.out.println("Pacote turístico cadastrado com sucesso! ");
         System.out.println("  » Cidade       : "+ pacote.cidade.nome +"/"+pacote.cidade.UF);
         System.out.println("  » Hotel        : " + pacote.hotel.nome);
-        System.out.printf ("  » Data início  : %02d/%02d/%d\n", ini.get(Calendar.DAY_OF_MONTH), ini.get(Calendar.MONTH)+1, ini.get(Calendar.YEAR));
-        System.out.printf ("  » Data fim     : %02d/%02d/%d\n", fim.get(Calendar.DAY_OF_MONTH), fim.get(Calendar.MONTH)+1, fim.get(Calendar.YEAR));
+        System.out.printf ("  » Data início  : %02d/%02d/%d\n", dataIniPacote.get(Calendar.DAY_OF_MONTH), dataIniPacote.get(Calendar.MONTH)+1, dataIniPacote.get(Calendar.YEAR));
+        System.out.printf ("  » Data fim     : %02d/%02d/%d\n", dataIniPacote.get(Calendar.DAY_OF_MONTH), dataIniPacote.get(Calendar.MONTH)+1, dataIniPacote.get(Calendar.YEAR));
         System.out.println("  » Restaurante  : "+ pacote.restaurante.nome);
         System.out.println("  » Ref. diárias : "+ pacote.qtdRefeicoesDiarias);
     }
@@ -162,31 +162,55 @@ class Main {
 		bd.addCidade(saoPaulo);
 		bd.addCidade(rio);
 
+		Hotel bHotelBrasilia 	= new Hotel(1, "B Hotel Brasília", 355.95f, bsb);
+		Hotel athosBulcao 		= new Hotel(2, "B Hotel Brasília", 355.95f, bsb);
+		Hotel cullinanplus 		= new Hotel(3, "B Hotel Brasília", 355.95f, bsb);		
+		
+		Hotel atlanticoPrime 	= new Hotel(1, "Atlantico Prime"      , 265.95f, saoPaulo);
+        Hotel pousoReal 		= new Hotel(2, "Pouso Real"           , 271.10f, saoPaulo);
+        Hotel americasBarra 	= new Hotel(3, "Américas Barra Hotel" , 166.45f, saoPaulo);
         
-        bd.addHotel("B Hotel Brasília"            , 355.95f, bsb);
-        bd.addHotel("Athos Bulcão Hplus Executive", 211.00f, bsb);
-        bd.addHotel("Cullinan Hplus Premium"      , 266.33f, bsb);
+        Hotel ibisPrime			= new Hotel(1, "Ibis Prime" 		, 265.95f, rio);
+        Hotel pousoRio 			= new Hotel(2, "Pouso Rio"         , 271.10f, rio);
+        Hotel copacabanaPalace 	= new Hotel(3, "Copacabana Palace" , 166.45f, rio);
+		
+		
+        bd.addHotel(bHotelBrasilia);
+        bd.addHotel(athosBulcao);
+        bd.addHotel(cullinanplus);
         
-        bd.addHotel("Atlantico Prime"             , 265.95f, saoPaulo);
-        bd.addHotel("Pouso Real"                  , 271.10f, saoPaulo);
-        bd.addHotel("Américas Barra Hotal"        , 166.45f, saoPaulo);
+        bd.addHotel(atlanticoPrime);
+        bd.addHotel(pousoReal);
+        bd.addHotel(americasBarra);
         
-        bd.addHotel("Atlantico Prime"             , 265.95f, rio);
-        bd.addHotel("Pouso Real"                  , 271.10f, rio);
-        bd.addHotel("Américas Barra Hotal"        , 166.45f, rio);
+        bd.addHotel(ibisPrime);
+        bd.addHotel(pousoRio);
+        bd.addHotel(copacabanaPalace);
         
         
-        bd.addRestaurante("Fred Restaurante"      ,  35.95f, bsb);
-        bd.addRestaurante("Nazo Sushi Bar"        ,  21.00f, bsb);
-        bd.addRestaurante("Caminito Parrila"      ,  26.33f, bsb);
+        Restaurante fredRestaurante = new Restaurante(1, "Fred Restaurante", 35.95f, bsb);
+        Restaurante nazoSushiBar 	= new Restaurante(2, "Nazo Sushi Bar", 36.95f, bsb);
+        Restaurante caminitoParrila = new Restaurante(3, "Fred Restaurante", 34.95f, bsb);       
 
-        bd.addRestaurante("Coco Bambu"            ,  25.95f, saoPaulo);
-        bd.addRestaurante("Oliver"                ,  21.10f, saoPaulo);
-        bd.addRestaurante("Taypá Sabores Del Perú",  16.45f, saoPaulo);        
+        Restaurante cocoBambu 		= new Restaurante(1, "Fred Restaurante", 32.95f, saoPaulo);
+        Restaurante oliver 			= new Restaurante(2, "Nazo Sushi Bar", 39.95f, saoPaulo);
+        Restaurante taypaSabores 	= new Restaurante(3, "Fred Restaurante", 35.95f, saoPaulo);   
+        
+        Restaurante cocoBambu2 			= new Restaurante(1, "Coco Bambu 2", 32.95f, rio);
+        Restaurante oliver2 			= new Restaurante(2, "Oliver 2", 39.95f, rio);
+        Restaurante taypaSabores2 		= new Restaurante(3, "Taypá Sabores Del Perú 2", 35.95f, rio);   
+        
+        bd.addRestaurante(fredRestaurante);
+        bd.addRestaurante(nazoSushiBar);
+        bd.addRestaurante(caminitoParrila);
 
-        bd.addRestaurante("Coco Bambu"            ,  25.95f, rio);
-        bd.addRestaurante("Oliver"                ,  21.10f, rio);
-        bd.addRestaurante("Taypá Sabores Del Perú",  16.45f, rio);
+        bd.addRestaurante(cocoBambu);
+        bd.addRestaurante(oliver);
+        bd.addRestaurante(taypaSabores);        
+
+        bd.addRestaurante(cocoBambu2);
+        bd.addRestaurante(oliver2);
+        bd.addRestaurante(taypaSabores2);
         
         
         return bd;
