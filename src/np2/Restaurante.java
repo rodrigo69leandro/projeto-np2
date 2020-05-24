@@ -1,15 +1,16 @@
 package np2;
 
-import java.util.List;
-
 public class Restaurante extends Entidade{
 	
 	public Cidade cidades;
+	public float  valorRefeicao;
 	
-	public Restaurante(String nome, Cidade cidade) {
+	public Restaurante(int id, String nome, float valorRefeicao, Cidade cidade) {
 		
-		this.nome 	 = nome;
-		this.cidades = cidade;
+		this.id 			= id;
+		this.nome 	 		= nome;
+		this.valorRefeicao 	= valorRefeicao;
+		this.cidades 		= cidade;
 		
 		
 	}

@@ -1,26 +1,32 @@
 package np2;
 
 import java.util.Calendar;
-import java.util.List;
 import np2.Cidade;
 
 public class PacoteTuristico {
 	
-	public List<Cidade> 	 cidades;
-	public List<Hotel>  	 hoteis;
-	public List<Restaurante> restaurantes;
+	public Cidade 	 		 cidade;
+	public Hotel		  	 hotel;
+	public Restaurante		 restaurante;
 	public Calendar 		 dataInicio;
 	public Calendar 		 dataFim;
 	public int 				 diarias;
+	public int				 qtdRefeicoesDiarias;
 	
-	public PacoteTuristico(List<Cidade> cidade, List<Hotel> hotel, Calendar dataInicio, 
-			Calendar dataFim, int Diarias, List<Restaurante> restaurante ) {
-		this.cidades 		= cidade;
-		this.hoteis 		= hotel;
+	public PacoteTuristico(Cidade cidade, Hotel hotel, Calendar dataInicio, 
+			Calendar dataFim, int Diarias, Restaurante restaurante ) {
+		this.cidade 		= cidade;
+		this.hotel 		= hotel;
 		this.dataInicio 	= dataInicio;
 		this.dataFim 		= dataFim;
-		this.restaurantes   = restaurante;
+		this.restaurante   = restaurante;
 		
+	}
+
+	public static PacoteTuristico Novo(Cidade cidadeEscolhida, Hotel hotelEscolhido, Calendar dataIniPacote,
+			int qtdDias, Restaurante restauranteEscolhido, int qtdRefeicoes) {
+		
+		return null;
 	}
 
 }
