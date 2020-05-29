@@ -6,8 +6,11 @@ import java.util.List;
 public class BancoDeDadosFake extends Entidade{
     public List<Hotel          > hoteis;
     public List<Cidade         > cidades;
+<<<<<<< HEAD
     public Cidade         		 cidade;
     public Hotel				 hotel;
+=======
+>>>>>>> a4cea03b540a404d77f61b4424204e6373003358
     public List<Restaurante    > restaurantes;
     public List<PacoteTuristico> pacotesTuristicos;
     public float valorDiaria;
@@ -22,6 +25,7 @@ public class BancoDeDadosFake extends Entidade{
         pacotesTuristicos = new ArrayList<PacoteTuristico>();
     }
 	
+<<<<<<< HEAD
     public void addCidade(Cidade cidade) {
     	
     	hoteis 		= new ArrayList<Hotel>();	
@@ -29,6 +33,13 @@ public class BancoDeDadosFake extends Entidade{
         if(!cidades.contains(cidade)){
             cidades.add(cidade);
         }
+=======
+    public Cidade addCidade(Cidade cidade) {
+    	
+    	cidades.add(id, cidade);
+    	
+    	return cidade;
+>>>>>>> a4cea03b540a404d77f61b4424204e6373003358
     }
  
     
@@ -37,6 +48,7 @@ public class BancoDeDadosFake extends Entidade{
 		this.hoteis.add(hotel);
 	}
     
+<<<<<<< HEAD
 	public void addRestaurante(Restaurante restaurante) {
 		
 		this.restaurantes.add(restaurante);
@@ -82,6 +94,35 @@ public class BancoDeDadosFake extends Entidade{
 		}
 		
 		return restaurantes.get(idEscolhido);
+=======
+	public void addHotel(String nome, float valorDiaria, Cidade cidade) {
+		
+		
+	}
+    
+	public void addRestaurante(String nome, float valorRefeicao, Cidade cidade) {
+		
+		
+	}
+
+	public Cidade getCidadePeloId(int idEscolhido) {
+		
+		System.out.println(this.cidades);
+
+		return cidades.get(id);
+		
+	
+	}
+
+	public Hotel getHotelPeloId(int idEscolhido) {
+		
+		return this.hoteis.get(id);
+	}
+    
+	public Restaurante GetRestaurantePeloId(int idEscolhido) {
+		
+		return this.restaurantes.get(id);
+>>>>>>> a4cea03b540a404d77f61b4424204e6373003358
 	}
 	
 }

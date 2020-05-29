@@ -28,5 +28,10 @@ public class PacoteTuristico {
 		
 		return null;
 	}
+<<<<<<< HEAD
+=======
+
+}
+>>>>>>> a4cea03b540a404d77f61b4424204e6373003358
 
 }
