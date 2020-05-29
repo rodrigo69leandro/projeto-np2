@@ -11,16 +11,14 @@ import np2.BancoDeDadosFake;
 class Main {
     public static void main(String[] args) {
     	
- 
-    	
         Util.cls();
         BancoDeDadosFake bd = GetBancoDeDadosFake(); // Método definido na linha 145 deste mesmo arquivo
         
         // O sistema impede que a mesma cidade seja cadastrada mais de uma vez
 
-
+        Cidade bsb = new Cidade(1, "Brasília", EnumUF.DF);
         
-//        bd.addCidade(brasilia);
+        bd.addCidade(bsb);
 //      bd.addCidade(bsbRepetida2);
 //      bd.addCidade(bsbRepetida3);
                 
@@ -61,6 +59,7 @@ class Main {
         Cidade cidadeEscolhida = bd.getCidadePeloId(idEscolhido);
 
         Util.cls();
+        
         System.out.println("Cadastrar novo pacote turístico ");
         System.out.println("  * Cidade       : "+ cidadeEscolhida.nome +"/"+cidadeEscolhida.UF);
         System.out.println("  * Hotel        : ");
@@ -70,13 +69,14 @@ class Main {
         System.out.println("  * Ref. diárias : ");
         System.out.println("-------------------------------------");
         System.out.println("  Hotéis disponíveis na cidade escolhida:");
-//        for(Hotel h : cidadeEscolhida.getHoteis()){
-//            System.out.println(" ("+ h.id +")   » " + h.nome);
-//        }
+        for(Hotel h : cidadeEscolhida.getHoteis()){
+            System.out.println(" ("+ h.id +")   » " + h.nome);
+        }
         System.out.printf("\n  Informe o código do hotel: ");
         idEscolhido = in.nextInt();
-        Hotel hotelEscolhido = bd.getHotelPeloId(idEscolhido);
+        Hotel hotelEscolhido = bd.getHotelPeloId(idEscolhido);  
 
+        
         Util.cls();
         System.out.println("Cadastrar novo pacote turístico ");
         System.out.println("  * Cidade       : "+ cidadeEscolhida.nome +"/"+cidadeEscolhida.UF);
@@ -123,7 +123,7 @@ class Main {
 //        }
         System.out.printf("\n  Informe o código do restaurante: ");
         idEscolhido = in.nextInt();
-        Restaurante restauranteEscolhido = bd.GetRestaurantePeloId(idEscolhido);
+        Restaurante restauranteEscolhido = bd.getRestaurantePeloId(idEscolhido);
 
         Util.cls();
         System.out.println("Cadastrar novo pacote turístico ");
@@ -157,22 +157,23 @@ class Main {
         Cidade bsb 			= new Cidade(1, "Brasília", EnumUF.DF);
         Cidade saoPaulo 	= new Cidade(2, "São Paulo", EnumUF.SP);
         Cidade rio			= new Cidade(3, "Rio de Janeiro", EnumUF.RJ);
+
         
 		bd.addCidade(bsb);
 		bd.addCidade(saoPaulo);
 		bd.addCidade(rio);
 
-		Hotel bHotelBrasilia 	= new Hotel(1, "B Hotel Brasília", 355.95f, bsb);
-		Hotel athosBulcao 		= new Hotel(2, "B Hotel Brasília", 355.95f, bsb);
-		Hotel cullinanplus 		= new Hotel(3, "B Hotel Brasília", 355.95f, bsb);		
+		Hotel bHotelBrasilia 	= new Hotel(1, "B Hotel Brasília", 331.94f, bsb);
+		Hotel athosBulcao 		= new Hotel(2, "Athos Bulcao"    , 365.74f, bsb);
+		Hotel cullinanplus 		= new Hotel(3, "Cullinan Plus"   , 355.99f, bsb);		
 		
 		Hotel atlanticoPrime 	= new Hotel(1, "Atlantico Prime"      , 265.95f, saoPaulo);
         Hotel pousoReal 		= new Hotel(2, "Pouso Real"           , 271.10f, saoPaulo);
         Hotel americasBarra 	= new Hotel(3, "Américas Barra Hotel" , 166.45f, saoPaulo);
         
         Hotel ibisPrime			= new Hotel(1, "Ibis Prime" 		, 265.95f, rio);
-        Hotel pousoRio 			= new Hotel(2, "Pouso Rio"         , 271.10f, rio);
-        Hotel copacabanaPalace 	= new Hotel(3, "Copacabana Palace" , 166.45f, rio);
+        Hotel pousoRio 			= new Hotel(2, "Pouso Rio"          , 271.10f, rio);
+        Hotel copacabanaPalace 	= new Hotel(3, "Copacabana Palace"  , 166.45f, rio);
 		
 		
         bd.addHotel(bHotelBrasilia);

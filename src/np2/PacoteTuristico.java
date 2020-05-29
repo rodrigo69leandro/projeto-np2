@@ -30,10 +30,3 @@ public class PacoteTuristico {
 	}
 
 }
-
-//public Partida(Time mandante, Time visitante, Calendar dataDaPartida, Campeonato campeonato){
-//    this.Mandante  = mandante;
-//    this.Visitante = visitante;
-//    this.Data      = dataDaPartida;
-//    Campeonato     = campeonato;
-//}

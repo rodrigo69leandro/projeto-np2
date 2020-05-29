@@ -1,27 +1,32 @@
 package np2;
 
+import java.util.ArrayList;
+
 public class Cidade extends Entidade {
 	
 	public EnumUF UF;
-	
+    public ArrayList<Hotel> 	  hoteis;
+    public ArrayList<Restaurante> restaurantes;
 	
 	public Cidade(int id, String nome, EnumUF UF) {
 		
-		this.id 		  = id;
-		this.nome 		  = nome;
-		this.UF 		  = UF;
+		this.id 		  		= id;
+		this.nome 		  		= nome;
+		this.UF					= UF;
+        hoteis 			  		= new ArrayList<Hotel>();
+        restaurantes			= new ArrayList<Restaurante>();
 	}
+	
 	
 	public String getNome() {
 		return this.nome;
 	}
 
 
-	public Object getHoteis() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	public ArrayList<Hotel> getHoteis() {
 
+		return this.hoteis;
+	}
 
 	public Object getRestaurantes() {
 		// TODO Auto-generated method stub

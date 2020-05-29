@@ -11,7 +11,8 @@ public class Restaurante extends Entidade{
 		this.nome 	 		= nome;
 		this.valorRefeicao 	= valorRefeicao;
 		this.cidades 		= cidade;
-		
+        
+		cidade.restaurantes.add(this);
 		
 	}
 

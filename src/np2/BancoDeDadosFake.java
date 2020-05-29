@@ -6,6 +6,8 @@ import java.util.List;
 public class BancoDeDadosFake extends Entidade{
     public List<Hotel          > hoteis;
     public List<Cidade         > cidades;
+    public Cidade         		 cidade;
+    public Hotel				 hotel;
     public List<Restaurante    > restaurantes;
     public List<PacoteTuristico> pacotesTuristicos;
     public float valorDiaria;
@@ -20,45 +22,66 @@ public class BancoDeDadosFake extends Entidade{
         pacotesTuristicos = new ArrayList<PacoteTuristico>();
     }
 	
-    public Cidade addCidade(Cidade cidade) {
+    public void addCidade(Cidade cidade) {
     	
-    	cidades.add(id, cidade);
-    	
-    	return cidade;
+    	hoteis 		= new ArrayList<Hotel>();	
+
+        if(!cidades.contains(cidade)){
+            cidades.add(cidade);
+        }
     }
  
     
-	public Hotel addHotel(Hotel hotel) {
-    	
-		hoteis.add(id, hotel);
-    	return hotel;
+	public void addHotel(Hotel hotel) {
+		
+		this.hoteis.add(hotel);
 	}
     
-	public Restaurante addRestaurante(Restaurante restaurante) {
-		restaurantes.add(restaurante);
-    	return restaurante;
+	public void addRestaurante(Restaurante restaurante) {
+		
+		this.restaurantes.add(restaurante);
 	}
 
 	public Cidade getCidadePeloId(int idEscolhido) {
-		
-		System.out.println(this.cidades);
 
-		return cidades.get(id);
-
+		for(int i = 0; i<cidades.size(); i++) {
+			if(cidades.get(i).id == idEscolhido) {
+				return cidades.get(i);
+			}
+		}
 		
+		return cidades.get(idEscolhido);
+	}
+	
+	public Hotel getHotel(Hotel hotel) {
+		
+		return this.hotel;
 	}
 
 	public Hotel getHotelPeloId(int idEscolhido) {
 		
-		System.out.println(this.hoteis);
-
-		return hoteis.get(id);
-
-	}
-    
-	public Restaurante GetRestaurantePeloId(int idEscolhido) {
+		for(Hotel h: hoteis.getI) {
+			h.id.equals(idEscolhido);
+		}
 		
-		return this.restaurantes.get(id);
+		
+		if (hotel.get(id).contains(idEscolhido)) {
+			this.hotel.id = idEscolhido;
+		};
+		
+		
+		return hotel;
+	} 
+    
+	public Restaurante getRestaurantePeloId(int idEscolhido) {
+		
+		for(int i = 0; i<restaurantes.size(); i++) {
+			if(cidades.get(i).id == idEscolhido) {
+				return restaurantes.get(i);
+			}
+		}
+		
+		return restaurantes.get(idEscolhido);
 	}
 	
 }
