@@ -12,11 +12,9 @@ public class Restaurante extends Entidade{
 		this.valorRefeicao 	= valorRefeicao;
 
 		cidade.restaurantes.add(this);
-		
 	}
 	
 	public int getId() {
 		return this.id;
 	}
-
 }

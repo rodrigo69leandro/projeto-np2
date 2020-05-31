@@ -4,5 +4,4 @@ public abstract class Entidade {
 
 	public int id;
 	public String nome;
-	
 }

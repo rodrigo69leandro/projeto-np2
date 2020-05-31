@@ -23,36 +23,29 @@ public class BancoDeDadosFake extends Entidade{
     }
 	
     public void addCidade(Cidade cidade) {
-
         if(!cidades.contains(cidade)){
             cidades.add(cidade);
         }
     }
 
-    
 	public void addHotel(Hotel hotel) {
-		
 		this.hoteis.add(hotel);
 	}
 	
 	public void addRestaurante(Restaurante restaurante) {
-		
 		this.restaurantes.add(restaurante);
 	}
 
 	public Cidade getCidadePeloId(int idEscolhido) {
-
 		for(int i = 0; i<cidades.size(); i++) {
 			if(cidades.get(i).id == idEscolhido) {
 				return cidades.get(i);
 			}
 		}
-		
 		return cidades.get(idEscolhido);
 	}
 
     public Hotel getHotelPeloId(ArrayList<Hotel> hoteis, int idEscolhido) {
-
     	this.hoteis = hoteis;
     	
     	for(Hotel h : hoteis) {
@@ -64,7 +57,6 @@ public class BancoDeDadosFake extends Entidade{
     }
     
 	public Restaurante getRestaurantePeloId(ArrayList<Restaurante> restaurantes, int idEscolhido) {
-		
 	    this.restaurantes = restaurantes;
 	    
 		for(Restaurante r : restaurantes) {
@@ -74,5 +66,4 @@ public class BancoDeDadosFake extends Entidade{
 	    }
 		return null;
 	}
-	
 }

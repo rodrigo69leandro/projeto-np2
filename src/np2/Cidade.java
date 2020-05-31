@@ -22,22 +22,12 @@ public class Cidade extends Entidade {
 		return this.nome;
 	}
 	
-//	public Hotel getHotel(int id) {
-//
-//		this.id = id;
-//		return this.hotel;
-//		
-//		return hoteis.get(id);
-//
-//	}
 
 	public ArrayList<Hotel> getHoteis() {
-
 		return this.hoteis;
 	}
 
 	public ArrayList<Restaurante> getRestaurantes() {
-
 		return this.restaurantes;
 	}
 	

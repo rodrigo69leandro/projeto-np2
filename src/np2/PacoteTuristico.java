@@ -13,11 +13,9 @@ public class PacoteTuristico {
 	public static int 				 diarias;
 	public static int				 qtdRefeicoesDiarias;
 	
-	public PacoteTuristico(Cidade cidade, Hotel hotel, Calendar dataInicio, 
-			Calendar dataFim, int Diarias, Restaurante restaurante ) {
-
-		
-	}
+//	public PacoteTuristico(Cidade cidade, Hotel hotel, Calendar dataInicio, 
+//			Calendar dataFim, int Diarias, Restaurante restaurante ) {
+//	}
 
 	public static PacoteTuristico novo(Cidade cidadeEscolhida, Hotel hotelEscolhido, Calendar dataIniPacote,
 			Calendar dataFimPacote, Restaurante restauranteEscolhido, int qtdRefeicoes) {
@@ -26,7 +24,6 @@ public class PacoteTuristico {
 		hotel 			   	= hotelEscolhido;
 		dataInicio 		 	= dataIniPacote;
 		dataFim 			= dataFimPacote;
-		
 		restaurante   		= restauranteEscolhido;
 		qtdRefeicoesDiarias = qtdRefeicoes;
 		

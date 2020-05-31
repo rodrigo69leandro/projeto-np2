@@ -1,13 +1,10 @@
 package np2;
 
-import java.util.ArrayList;
-
 public class Hotel extends Entidade{
 	
 	public Cidade 		cidade;
 	public float		valorDiaria;
 
-	
 	public Hotel(int id, String nome, float valorDiaria, Cidade cidade) {
 		
 		this.id 			= id;
@@ -16,14 +13,9 @@ public class Hotel extends Entidade{
 		this.valorDiaria 	= valorDiaria;
 
         cidade.hoteis.add(this);
-
-		
 	}
 	
 	public int getId() {
 		return this.id;
 	}
-	
-
-
 }
