@@ -1,35 +1,26 @@
 package np2;
-import java.util.List;
 
 import java.util.Scanner;
-import java.util.ArrayList;
 import java.util.Calendar;
 import np2.Util;
 import np2.BancoDeDadosFake;
 
-
 class Main {
     public static void main(String[] args) {
-    	
-<<<<<<< HEAD
-=======
- 
-    	
->>>>>>> a4cea03b540a404d77f61b4424204e6373003358
+
         Util.cls();
         BancoDeDadosFake bd = GetBancoDeDadosFake(); // Método definido na linha 145 deste mesmo arquivo
         
         // O sistema impede que a mesma cidade seja cadastrada mais de uma vez
 
-<<<<<<< HEAD
-        Cidade bsb = new Cidade(1, "Brasília", EnumUF.DF);
-        
-        bd.addCidade(bsb);
-=======
+
+//        Cidade bsb = new Cidade(1, "Brasília", EnumUF.DF);
+//        
+//        bd.addCidade(bsb);
 
         
 //        bd.addCidade(brasilia);
->>>>>>> a4cea03b540a404d77f61b4424204e6373003358
+
 //      bd.addCidade(bsbRepetida2);
 //      bd.addCidade(bsbRepetida3);
                 
@@ -49,8 +40,9 @@ class Main {
 //        bd.addRestaurante(restRepetido1);
 //      bd.addRestaurante(restRepetido2);
 //      bd.addRestaurante(restRepetido3);
-
-        int idEscolhido;
+        
+        int	idEscolhido;        
+        
         Scanner in = new Scanner(System.in);
 
         System.out.println("Cadastrar novo pacote turístico: ");
@@ -70,10 +62,7 @@ class Main {
         Cidade cidadeEscolhida = bd.getCidadePeloId(idEscolhido);
 
         Util.cls();
-<<<<<<< HEAD
-        
-=======
->>>>>>> a4cea03b540a404d77f61b4424204e6373003358
+
         System.out.println("Cadastrar novo pacote turístico ");
         System.out.println("  * Cidade       : "+ cidadeEscolhida.nome +"/"+cidadeEscolhida.UF);
         System.out.println("  * Hotel        : ");
@@ -83,25 +72,18 @@ class Main {
         System.out.println("  * Ref. diárias : ");
         System.out.println("-------------------------------------");
         System.out.println("  Hotéis disponíveis na cidade escolhida:");
-<<<<<<< HEAD
+        
+        Util.cls();
+        
         for(Hotel h : cidadeEscolhida.getHoteis()){
             System.out.println(" ("+ h.id +")   » " + h.nome);
         }
         System.out.printf("\n  Informe o código do hotel: ");
         idEscolhido = in.nextInt();
-        Hotel hotelEscolhido = bd.getHotelPeloId(idEscolhido);  
-
         
-=======
-//        for(Hotel h : cidadeEscolhida.getHoteis()){
-//            System.out.println(" ("+ h.id +")   » " + h.nome);
-//        }
-        System.out.printf("\n  Informe o código do hotel: ");
-        idEscolhido = in.nextInt();
-        Hotel hotelEscolhido = bd.getHotelPeloId(idEscolhido);
-
->>>>>>> a4cea03b540a404d77f61b4424204e6373003358
-        Util.cls();
+        Hotel hotelEscolhido = bd.getHotelPeloId(cidadeEscolhida.hoteis, idEscolhido);
+        
+        
         System.out.println("Cadastrar novo pacote turístico ");
         System.out.println("  * Cidade       : "+ cidadeEscolhida.nome +"/"+cidadeEscolhida.UF);
         System.out.println("  * Hotel        : "+ hotelEscolhido.nome);
@@ -131,51 +113,45 @@ class Main {
         System.out.printf("  Dias de permanência: ");
         int qtdDias = in.nextInt();
         dataIniPacote.add(Calendar.DATE, qtdDias);
-
+        
         Util.cls();
         System.out.println("Cadastrar novo pacote turístico ");
         System.out.println("  * Cidade       : "+ cidadeEscolhida.nome +"/"+cidadeEscolhida.UF);
         System.out.println("  * Hotel        : " + hotelEscolhido.nome);
         System.out.printf ("  * Data início  : %02d/%02d/%d\n", dia, mes, ano);
-<<<<<<< HEAD
         System.out.printf ("  * Data Fim	 : %02d/%02d/%d\n", dataIniPacote.get(Calendar.DAY_OF_MONTH), dataIniPacote.get(Calendar.MONTH)+1, dataIniPacote.get(Calendar.YEAR));
-=======
-        System.out.printf ("  * Data início  : %02d/%02d/%d\n", dataIniPacote.get(Calendar.DAY_OF_MONTH), dataIniPacote.get(Calendar.MONTH)+1, dataIniPacote.get(Calendar.YEAR));
->>>>>>> a4cea03b540a404d77f61b4424204e6373003358
         System.out.println("  * Restaurante  : ");
         System.out.println("  * Ref. diárias : ");
         System.out.println("-------------------------------------");
         System.out.println("  Restaurantes disponíveis na cidade escolhida:");
-//        for(Restaurante r : cidadeEscolhida.getRestaurantes()){
-//            System.out.println("    » "+ r.nome +" ("+ r.id +")");
-//        }
+        for(Restaurante r : cidadeEscolhida.getRestaurantes()){
+            System.out.println("  ("+ r.id +")" + "  » " + r.nome);
+        }
         System.out.printf("\n  Informe o código do restaurante: ");
         idEscolhido = in.nextInt();
-<<<<<<< HEAD
-        Restaurante restauranteEscolhido = bd.getRestaurantePeloId(idEscolhido);
-=======
-        Restaurante restauranteEscolhido = bd.GetRestaurantePeloId(idEscolhido);
->>>>>>> a4cea03b540a404d77f61b4424204e6373003358
+        Restaurante restauranteEscolhido = bd.getRestaurantePeloId(cidadeEscolhida.restaurantes, idEscolhido);
+
 
         Util.cls();
         System.out.println("Cadastrar novo pacote turístico ");
         System.out.println("  * Cidade       : "+ cidadeEscolhida.nome +"/"+cidadeEscolhida.UF);
         System.out.println("  * Hotel        : " + hotelEscolhido.nome);
         System.out.printf ("  * Data início  : %02d/%02d/%d\n", dia, mes, ano);
-<<<<<<< HEAD
         System.out.printf ("  * Data Fim	 : %02d/%02d/%d\n", dataIniPacote.get(Calendar.DAY_OF_MONTH), dataIniPacote.get(Calendar.MONTH)+1, dataIniPacote.get(Calendar.YEAR));
-=======
-        System.out.printf ("  * Data início  : %02d/%02d/%d\n", dataIniPacote.get(Calendar.DAY_OF_MONTH), dataIniPacote.get(Calendar.MONTH)+1, dataIniPacote.get(Calendar.YEAR));
->>>>>>> a4cea03b540a404d77f61b4424204e6373003358
+//        System.out.printf ("  * Data início  : %02d/%02d/%d\n", dataIniPacote.get(Calendar.DAY_OF_MONTH), dataIniPacote.get(Calendar.MONTH)+1, dataIniPacote.get(Calendar.YEAR));
         System.out.println("  * Restaurante  : "+ restauranteEscolhido.nome);
         System.out.println("  * Ref. diárias : ");
         System.out.println("-------------------------------------");
         System.out.printf("  Quantas refeições diárias inclusas? ");
-<<<<<<< HEAD
         int qtdRefeicoesDiarias = in.nextInt();
 
-        PacoteTuristico pacote = PacoteTuristico.Novo(cidadeEscolhida, hotelEscolhido, dataIniPacote, qtdDias, restauranteEscolhido, qtdRefeicoesDiarias);
-
+        Calendar dataFimPacote = Util.GetData(dia, mes, ano);
+        
+        dataIniPacote = Util.GetData(dia, mes, ano);
+        dataFimPacote = Util.GetData(dia + qtdDias, mes, ano);
+        
+        PacoteTuristico pacote = PacoteTuristico.novo(cidadeEscolhida, hotelEscolhido, dataIniPacote, dataFimPacote, restauranteEscolhido, qtdRefeicoesDiarias);
+        
         Util.cls();
 //        Calendar ini = pacote.dataInicio;
 //        Calendar fim = pacote.dataFim;
@@ -183,41 +159,22 @@ class Main {
         System.out.println("  » Cidade       : "+ pacote.cidade.nome +"/"+pacote.cidade.UF);
         System.out.println("  » Hotel        : " + pacote.hotel.nome);
         System.out.printf ("  » Data início  : %02d/%02d/%d\n", dataIniPacote.get(Calendar.DAY_OF_MONTH), dataIniPacote.get(Calendar.MONTH)+1, dataIniPacote.get(Calendar.YEAR));
-        System.out.printf ("  » Data fim     : %02d/%02d/%d\n", dataIniPacote.get(Calendar.DAY_OF_MONTH), dataIniPacote.get(Calendar.MONTH)+1, dataIniPacote.get(Calendar.YEAR));
-=======
+        System.out.printf ("  » Data fim     : %02d/%02d/%d\n", dataFimPacote.get(Calendar.DAY_OF_MONTH), dataIniPacote.get(Calendar.MONTH)+1, dataIniPacote.get(Calendar.YEAR));
         int qtdRefeicoes = in.nextInt();
 
-        PacoteTuristico pacote = PacoteTuristico.Novo(cidadeEscolhida, hotelEscolhido, dataIniPacote, qtdDias, restauranteEscolhido, qtdRefeicoes);
-
-        Util.cls();
-        Calendar ini = pacote.dataInicio;
-        Calendar fim = pacote.dataFim;
-        System.out.println("Pacote turístico cadastrado com sucesso! ");
-        System.out.println("  » Cidade       : "+ pacote.cidade.nome +"/"+pacote.cidade.UF);
-        System.out.println("  » Hotel        : " + pacote.hotel.nome);
-        System.out.printf ("  » Data início  : %02d/%02d/%d\n", ini.get(Calendar.DAY_OF_MONTH), ini.get(Calendar.MONTH)+1, ini.get(Calendar.YEAR));
-        System.out.printf ("  » Data fim     : %02d/%02d/%d\n", fim.get(Calendar.DAY_OF_MONTH), fim.get(Calendar.MONTH)+1, fim.get(Calendar.YEAR));
->>>>>>> a4cea03b540a404d77f61b4424204e6373003358
-        System.out.println("  » Restaurante  : "+ pacote.restaurante.nome);
-        System.out.println("  » Ref. diárias : "+ pacote.qtdRefeicoesDiarias);
     }
     
-    public static BancoDeDadosFake GetBancoDeDadosFake(){
+		public static BancoDeDadosFake GetBancoDeDadosFake(){
         BancoDeDadosFake bd = new BancoDeDadosFake();
         
-        Cidade bsb 			= new Cidade(1, "Brasília", EnumUF.DF);
-        Cidade saoPaulo 	= new Cidade(2, "São Paulo", EnumUF.SP);
+        Cidade bsb 			= new Cidade(1, "Brasília"		, EnumUF.DF);
+        Cidade saoPaulo 	= new Cidade(2, "São Paulo"		, EnumUF.SP);
         Cidade rio			= new Cidade(3, "Rio de Janeiro", EnumUF.RJ);
-<<<<<<< HEAD
-
-=======
->>>>>>> a4cea03b540a404d77f61b4424204e6373003358
         
 		bd.addCidade(bsb);
 		bd.addCidade(saoPaulo);
 		bd.addCidade(rio);
 
-<<<<<<< HEAD
 		Hotel bHotelBrasilia 	= new Hotel(1, "B Hotel Brasília", 331.94f, bsb);
 		Hotel athosBulcao 		= new Hotel(2, "Athos Bulcao"    , 365.74f, bsb);
 		Hotel cullinanplus 		= new Hotel(3, "Cullinan Plus"   , 355.99f, bsb);		
@@ -243,7 +200,6 @@ class Main {
         bd.addHotel(pousoRio);
         bd.addHotel(copacabanaPalace);
         
-        
         Restaurante fredRestaurante = new Restaurante(1, "Fred Restaurante", 35.95f, bsb);
         Restaurante nazoSushiBar 	= new Restaurante(2, "Nazo Sushi Bar", 36.95f, bsb);
         Restaurante caminitoParrila = new Restaurante(3, "Fred Restaurante", 34.95f, bsb);       
@@ -267,35 +223,7 @@ class Main {
         bd.addRestaurante(cocoBambu2);
         bd.addRestaurante(oliver2);
         bd.addRestaurante(taypaSabores2);
-=======
-        
-        bd.addHotel("B Hotel Brasília"            , 355.95f, bsb);
-        bd.addHotel("Athos Bulcão Hplus Executive", 211.00f, bsb);
-        bd.addHotel("Cullinan Hplus Premium"      , 266.33f, bsb);
-        
-        bd.addHotel("Atlantico Prime"             , 265.95f, saoPaulo);
-        bd.addHotel("Pouso Real"                  , 271.10f, saoPaulo);
-        bd.addHotel("Américas Barra Hotal"        , 166.45f, saoPaulo);
-        
-        bd.addHotel("Atlantico Prime"             , 265.95f, rio);
-        bd.addHotel("Pouso Real"                  , 271.10f, rio);
-        bd.addHotel("Américas Barra Hotal"        , 166.45f, rio);
-        
-        
-        bd.addRestaurante("Fred Restaurante"      ,  35.95f, bsb);
-        bd.addRestaurante("Nazo Sushi Bar"        ,  21.00f, bsb);
-        bd.addRestaurante("Caminito Parrila"      ,  26.33f, bsb);
 
-        bd.addRestaurante("Coco Bambu"            ,  25.95f, saoPaulo);
-        bd.addRestaurante("Oliver"                ,  21.10f, saoPaulo);
-        bd.addRestaurante("Taypá Sabores Del Perú",  16.45f, saoPaulo);        
-
-        bd.addRestaurante("Coco Bambu"            ,  25.95f, rio);
-        bd.addRestaurante("Oliver"                ,  21.10f, rio);
-        bd.addRestaurante("Taypá Sabores Del Perú",  16.45f, rio);
->>>>>>> a4cea03b540a404d77f61b4424204e6373003358
-        
-        
         return bd;
     }
 }

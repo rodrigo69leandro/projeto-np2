@@ -5,33 +5,34 @@ import np2.Cidade;
 
 public class PacoteTuristico {
 	
-	public Cidade 	 		 cidade;
-	public Hotel		  	 hotel;
-	public Restaurante		 restaurante;
-	public Calendar 		 dataInicio;
-	public Calendar 		 dataFim;
-	public int 				 diarias;
-	public int				 qtdRefeicoesDiarias;
+	public static Cidade 	 		 cidade;
+	public static Hotel		  	 	 hotel;
+	public static Restaurante		 restaurante;
+	public static Calendar 		 	 dataInicio;
+	public static Calendar 		 	 dataFim;
+	public static int 				 diarias;
+	public static int				 qtdRefeicoesDiarias;
 	
 	public PacoteTuristico(Cidade cidade, Hotel hotel, Calendar dataInicio, 
 			Calendar dataFim, int Diarias, Restaurante restaurante ) {
-		this.cidade 		= cidade;
-		this.hotel 		= hotel;
-		this.dataInicio 	= dataInicio;
-		this.dataFim 		= dataFim;
-		this.restaurante   = restaurante;
+
 		
 	}
 
-	public static PacoteTuristico Novo(Cidade cidadeEscolhida, Hotel hotelEscolhido, Calendar dataIniPacote,
-			int qtdDias, Restaurante restauranteEscolhido, int qtdRefeicoes) {
+	public static PacoteTuristico novo(Cidade cidadeEscolhida, Hotel hotelEscolhido, Calendar dataIniPacote,
+			Calendar dataFimPacote, Restaurante restauranteEscolhido, int qtdRefeicoes) {
+	
+		cidade 			 	= cidadeEscolhida;
+		hotel 			   	= hotelEscolhido;
+		dataInicio 		 	= dataIniPacote;
+		dataFim 			= dataFimPacote;
+		
+		restaurante   		= restauranteEscolhido;
+		qtdRefeicoesDiarias = qtdRefeicoes;
 		
 		return null;
 	}
-<<<<<<< HEAD
-=======
 
 }
->>>>>>> a4cea03b540a404d77f61b4424204e6373003358
 
-}
+
